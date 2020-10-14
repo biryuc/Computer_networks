@@ -1,0 +1,4 @@
+in wireshark:
+http.request.method == "POST"
+open and registration(for example):
+http://1plus1tv.ru/
