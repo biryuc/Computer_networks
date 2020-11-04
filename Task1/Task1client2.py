@@ -8,4 +8,4 @@ while True:
 
     msg = sock.recv(1024) #получаем  по 1 кб
     print('message from server: ' + msg.decode())
-    sock.close()
+    
