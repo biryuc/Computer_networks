@@ -4,7 +4,7 @@ import sys
 
 buffer_size = 4096
 forward_to = ('localhost', 5555)
-forward_to2 = ('localhost', 5556)
+
 
 class Forward:
 
@@ -14,15 +14,6 @@ class Forward:
     def start(self, host, port):
         self.forward.connect((host, port))
         return self.forward
-class Forward2:
-
-    def __init__(self):
-        self.forward2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    def start(self, host2, port2):
-        self.forward2.connect((host2, port2))
-        return self.forward2
-
 
 
 class TheServer:
