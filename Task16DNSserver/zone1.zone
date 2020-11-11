@@ -1,0 +1,32 @@
+$TTL 7200
+;Start of authority	- используется для указания на новую зону
+@   IN SOA zone1. nikita.zone1. (
+			    174		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+;заголовочная запись была сверху, теперь сервера имён (NS - name server)
+;Authoritative name server	-  Адрес узла, отвечающего за доменную зону     
+    IN NS zone1. 
+zone1.  IN  A     192.168.1.5
+me      IN  CNAME zone1.
+;me - альтернативное имя для zone1.
+post1   IN  MX  11     imap.yandex.ru.
+        IN  A 77.88.21.125
+        IN  WKS 77.88.21.125     tcp imap
+yand	IN	CNAME	post1
+post2	IN	MX	10		imap.gmail.com.
+		IN	A	173.194.222.109
+		IN	A	173.194.222.108
+		IN	WKS	173.194.222.109	tcp	imap
+		IN	WKS	173.194.222.108	tcp	imap
+gml		IN	CNAME	post2
+;
+;WKS - well-known service Список доступных общеизвестных сервисов
+;теперь уже не корень зоны, а имя в нашей зоне, MX - mail exchange (почта)
+;MX потом приоритет сервера 
+;CNAME - Canonical name, Каноническое имя для псевдонима (одноуровневая переадресация)
+;A - Address, Адресная запись, соответствие между именем и IP-адресом 
+;
