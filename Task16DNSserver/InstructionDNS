@@ -1,1 +1,4 @@
 In terminal:
+sudo apt install bind9
+https://www.k-max.name/linux/dns-server-bind/ # iformation about bind
+
