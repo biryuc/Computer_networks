@@ -1,4 +1,23 @@
 In terminal:
 sudo apt install bind9
-https://www.k-max.name/linux/dns-server-bind/ # iformation about bind
+------------------------------
+# https://www.k-max.name/linux/dns-server-bind/ # iformation about bind
+https://www.hiroom2.com/2018/08/01/linuxmint-19-bind-en/ #instruction
+https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D0%BF%D1%8B_%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BD%D1%8B%D1%85_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B5%D0%B9_DNS
+-----------------------------
+open in nano /etc/bind/named.conf.local and change 
+open in nano /etc/bind/named.conf.local and change
+named-checkconf
+$ /usr/sbin/named-checkzone zone1.com /var/cache/bind/zone1.com.zone
+you can see:
+zone hiroom2.com/IN: loaded serial 2018050600
+OK
+sudo systemctl enable bind9
+sudo systemctl restart bind9
+nslookup server.zone1.com localhost.localdomain
+you can see:
+Server:         localhost.localdomain
+Address:        ::1#53
 
+Name:   server.hiroom2.com
+Address: 192.168.11.70
